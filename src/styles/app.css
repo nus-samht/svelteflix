@@ -6,6 +6,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --col-padding: 1rem;
+    --col-max-w: 80rem;
+
+    @screen md {
+      --col-padding: 4rem;
+    }
+  }
+
   html,
   body {
     height: 100%;
@@ -21,6 +30,12 @@
 }
 
 @layer utilities {
+  .col-wrapper {
+    @apply md:mx-auto;
+    padding: 0 var(--col-padding);
+    max-width: var(--col-max-w);
+  }
+
   .col-center {
     @apply flex flex-col items-center justify-center;
   }
