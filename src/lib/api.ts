@@ -1,4 +1,6 @@
 export const baseUrl = 'https://api.movies.tastejs.com';
+export const baseImageUrl = 'https://image.tmdb.org/t/p';
+
 export async function get(
   fetch: typeof globalThis.fetch,
   endpoint: string,
@@ -8,4 +10,8 @@ export async function get(
   const response = await fetch(`${baseUrl}/${endpoint}?${queryString}`);
 
   return response.json();
+}
+
+export function image(file: string, width: number) {
+  return `${baseImageUrl}/w${width}${file}`;
 }
