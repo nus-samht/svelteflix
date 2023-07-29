@@ -1,9 +1,19 @@
 <script lang="ts">
   import type { MovieListResult } from '$lib/types';
   import { image } from '$lib/api';
+  import type { View } from '$lib/views';
 
   export let movies: MovieListResult[];
+  export let view: View;
+  export let href: string;
 </script>
+
+<h2 class="col-wrapper">
+  {view.title}
+  {#if href}
+    <a {href}>see all</a>
+  {/if}
+</h2>
 
 <div class="flex gap-4 h-40 overflow-x-scroll overscroll-x-contain">
   {#each movies as movie}
