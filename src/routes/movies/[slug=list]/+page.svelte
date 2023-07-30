@@ -5,7 +5,7 @@
 </script>
 
 <div class="col-wrapper">
-  <h1>{data.title}</h1>
+  <h1 class="mb-8">{data.title}</h1>
   <ResultsPage
     movies={data.movies}
     next={data.next_page ? `/movies/${data.view}?page=${data.next_page}` : null}
